@@ -4,26 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Enroll in LeoLilly Care International Courses</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Enroll - LeoLilly Care International</title>
+    
+    <!-- External CSS for FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu|Pacifico|Cutive+Mono|Source+Sans+Pro">
+    <link rel="stylesheet" href="/style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
     <!-- Header Section -->
     <header class="header">
         <div class="logo-container">
-            <img src="/img/Final Logo .png" alt="LeoLilly Care International Logo" class="logo-image">
-        
+            <img src="https://leolilly.org/wp-content/uploads/2024/10/Final-Logo-.png" alt="LeoLilly Logo" class="logo-image">
         </div>
-        <nav>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" id="navLinks">
             <ul>
-                <li><a href="index.html">Home</a></li> <!-- Link back to landing page -->
+                <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="booking.html">Enroll</a></li> <!-- Link to booking page -->
+                <li><a href="enroll.html">Enroll</a></li>
             </ul>
         </nav>
+
+        <!-- Mobile menu icon -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
     </header>
 
+    
     <!-- Enrollment Form Section -->
     <section id="enroll" class="enroll">
         <h2>Enroll in Our Courses</h2>
@@ -55,9 +67,13 @@
         <div class="footer-content">
             <p>Contact Us: +27 73 354 4713 | <a href="mailto:admin@leolilly.org">admin@leolilly.org</a></p>
             <p>Address: 1006 Blauwberg Building, 22 Kapteijn Street, Hillbrow, Johannesburg, 2001</p>
+            <a href="https://wa.me/27743809752" class="whatsapp-button-footer">Chat with us on WhatsApp!</a>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <p>© 2024 Global Hope Consortium. Designed and Developed with Care.</p>
+    </footer>   
+    
+
+
 </body>
 </html>

@@ -4,26 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LeoLilly Care International</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Responsive Navigation Menu</title>
+    <!-- FontAwesome for hamburger icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu|Pacifico|Cutive+Mono|Source+Sans+Pro">
+    <!-- Link to the custom CSS file -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- Link to the custom JavaScript file -->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
     <!-- Header Section -->
     <header class="header">
+        <!-- Logo Container -->
         <div class="logo-container">
-            <img src="/img/Final Logo .png" alt="LeoLilly Care International Logo" class="logo-image">
+            <!-- Logo Image (Not Clickable) -->
+            <img src="https://leolilly.org/wp-content/uploads/2024/10/Final-Logo-.png" alt="LeoLilly Logo" class="logo-image">
         </div>
-        <nav>
+
+        <!-- Navigation Menu for Larger Screens -->
+        <nav class="nav-menu" id="navLinks">
             <ul>
+                <!-- Navigation Links -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="booking.html">Enroll</a></li>
+                <li><a href="enroll.html">Enroll</a></li>
             </ul>
         </nav>
+
+        <!-- Mobile menu icon (Hamburger) -->
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i> <!-- Initial state as hamburger icon -->
+        </a>
     </header>
 
+   
     <!-- Hero Section -->
     <section class="hero" id="home">
         <h2>Legacy Building Through Caregiving</h2>
@@ -73,11 +89,10 @@
             <p>Contact Us: +27 73 354 4713 | <a href="mailto:admin@leolilly.org">admin@leolilly.org</a></p>
             <p>Address: 1006 Blauwberg Building, 22 Kapteijn Street, Hillbrow, Johannesburg, 2001</p>
             <p>About Us: LeoLilly Care International was founded in 2024 by the children of Leo and Lilly as a legacy-building institution.</p>
-            <p>FAQ: For more information, visit our FAQ page.</p>
+            <a href="https://wa.me/27743809752" class="whatsapp-button-footer">Chat with us on WhatsApp!</a>
         </div>
-        <a href="https://wa.me/27743809752" class="whatsapp-button-footer">Chat with us on WhatsApp!</a>
+        <p>© 2024 Global Hope Consortium. Designed and Developed with Care.</p>
     </footer>
-
-    <script src="script.js"></script>
+  
 </body>
 </html>

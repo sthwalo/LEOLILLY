@@ -1,13 +1,19 @@
 /*
- Theme Name: LeoLilly Custom Theme
+ Theme Name: LeoLilly Theme
  Theme URI: https://leolilly.org
  Author: Immaculate
- Author URI: https://github.com/sthwalo
- Description: A custom blank theme for full design control.
+ Author URI: https://leolilly.org
+ Description: Custom WordPress theme for LeoLilly Care International.
  Version: 1.0
 */
 
-/* General Styling */
+@import url('https://fonts.googleapis.com/css?family=Raleway|Ubuntu|Pacifico|Cutive+Mono|Source+Sans+Pro');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* ==========================
+   General Body Styling
+========================== */
+/* General body styling for font and background */
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #F2F2F2; /* Light grey background */
@@ -16,45 +22,140 @@ body {
     color: #0D0D0D; /* Black text */
 }
 
+/* Clear floats */
 .clear {
     clear: both;
 }
 
+/* General link styling */
 a {
     color: #FFFFFF; /* White for links */
     text-decoration: none;
 }
 
-/* General link styling */
-nav ul li a {
-    color: #FFFFFF; /* White text for navigation links */
-    text-decoration: none;
-    font-weight: normal; /* Ensure normal weight */
+/* ==========================
+   Header Styling
+========================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #40363B; /* Dark grey background */
+    padding: 10px 20px;
+    color: #FFFFFF; /* White text color */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the header stays on top when scrolling */
 }
 
-/* Ensure links keep the same color when clicked or visited */
-nav ul li a:visited, 
-nav ul li a:active {
-    color: #FFFFFF; /* Keep the color consistent after clicking */
+/* ==========================
+   Logo Styling
+========================== */
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
-/* Hover state */
-nav ul li:hover a {
-    color: #999; /* Change to light grey on hover */
+.logo-container .logo-image {
+    max-width: 150px; /* Restrict logo width */
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Active state for the current page (only for the clicked link) */
-nav ul li a.active {
-    color: #5D8C6D; /* Green to highlight active page */
-    font-weight: bold; /* Only bold the active link, not the entire menu */
+/* ==========================
+   Navigation Menu Styling (Desktop)
+========================== */
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal display for desktop */
 }
 
-/* Optional: Highlight link on hover (when it's also active) */
-nav ul li a.active:hover {
-    color: #5D8C6D;
+.nav-menu ul li {
+    margin-right: 20px; /* Add spacing between menu items */
 }
 
-/* Button Styling */
+.nav-menu ul li a {
+    color: #FFFFFF; /* White text color */
+    text-decoration: none; /* No underline */
+    padding: 10px;
+    font-size: 18px;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #3a1846; /* Background color change on hover */
+    border-radius: 4px; /* Add smooth edges to hovered item */
+}
+
+/* ==========================
+   Mobile Menu Styling
+========================== */
+/* Hides the menu on smaller screens by default */
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Hide hamburger icon on larger screens */
+.icon {
+    display: none;
+    font-size: 24px; /* Icon size */
+    color: #FFFFFF;
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+
+/* ==========================
+   Responsive Design (Mobile)
+========================== */
+@media screen and (max-width: 768px) {
+
+    /* Hide desktop navigation menu on mobile */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #40363B; /* Match header color */
+        position: relative;
+        top: 5px;
+        left: 0;
+        text-align: center; /* Align text centrally for mobile */
+    }
+
+    /* Display the hamburger icon on mobile */
+    .icon {
+        display: block;
+    }
+
+    /* Show the navigation menu when the 'show' class is added */
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column; /* Stack menu items vertically on mobile */
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 18px; /* Increase font size for mobile readability */
+    }
+
+    .section .W,
+    .top-students .student {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* ==========================
+   Button Styling
+========================== */
 button,
 .cta-button,
 .whatsapp-button {
@@ -70,6 +171,7 @@ button,
     text-decoration: none;
 }
 
+/* Hover state for buttons */
 button:hover,
 .cta-button:hover,
 .whatsapp-button:hover {
@@ -77,42 +179,10 @@ button:hover,
     cursor: pointer;
 }
 
-/* Header Section */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #40363B; /* Dark grey background */
-    padding: 10px 20px;
-    color: #FFFFFF; /* White text */
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo-image {
-    max-width: 200px;
-    height: auto;
-    margin-right: 10px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-/* Hero Section */
+/* ==========================
+   Hero Section Styling
+========================== */
+/* Styling for the hero section message */
 .hero {
     text-align: center;
     padding: 50px 20px;
@@ -120,7 +190,10 @@ nav ul li {
     color: white;
 }
 
-/* Section Styling */
+/* ==========================
+   General Section Styling
+========================== */
+/* General styling for all sections */
 .section {
     text-align: center;
     color: #0D0D0D;
@@ -134,10 +207,31 @@ nav ul li {
     color: #40363B;
 }
 
-/* Courses Section */
+/* ==========================
+   Courses Section Styling
+========================== */
+/* Ensure all course containers have the same height */
+.courses .container {
+    display: flex;
+    flex-direction: column; /* Heading at the top, containers below */
+    align-items: center; /* Center align the heading */
+}
+
+/* Separate grid for the courses */
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between columns and rows */
+    width: 100%;
+}
+
+/* Layout and styling for courses section */
 .section .W {
-    display: inline-block;
-    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 48%; /* Ensures two columns */
     padding: 30px 20px;
     background-color: #FFFFFF;
     border-radius: 5px;
@@ -145,107 +239,118 @@ nav ul li {
     transition: background-color 0.5s ease, border-radius 0.5s ease;
 }
 
+/* Hover effect for the courses section */
 .section .W:hover {
     border-radius: 20px;
     background-color: #753F8C;
     color: #FFFFFF;
 }
 
-.section .W h2 {
-    font-size: 26px;
-    color: #5D8C6D;
-    padding-top: 5%;
+/* Ensure buttons and content are aligned at the bottom */
+.section .W .cta-button {
+    margin-top: auto; /* Keeps the button aligned at the bottom */
 }
 
-.section .W p {
-    color: #40363B;
-    padding-bottom: 40px;
+/* Heading styling */
+.courses h1 {
+    margin-bottom: 40px; /* Adds space between heading and courses */
+    text-align: center; /* Center the heading */
 }
 
-/* Top Students Section */
+/* ==========================
+   Fix for Mobile Readability (Courses Section)
+========================== */
+@media only screen and (max-width: 768px) {
+    .section .W {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px; /* Adds space between course items */
+    }
+
+    .section .W h2 {
+        font-size: 22px; /* Smaller font size for mobile */
+    }
+
+    .section .W p {
+        padding-bottom: 20px;
+        font-size: 16px; /* Readable font size for mobile */
+    }
+
+    .cta-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* ==========================
+   Top Students Section Styling
+========================== */
+/* Layout for top students section */
 .top-students {
     text-align: center;
     padding: 40px 0;
 }
 
+/* Heading styling for Success Stories */
 .top-students h1 {
     padding-bottom: 55px;
     color: #40363B;
     letter-spacing: 1.8;
     line-height: 1.7;
+    width: 100%;
+    margin: 0 auto;
 }
 
+/* Container layout for student containers */
+.top-students .container {
+    display: flex;
+    align-items: stretch; /* Stretch student containers to equal height */
+    justify-content: space-around; /* Reduced gap by using space-around */
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Student containers */
 .top-students .student {
-    display: inline-block;
-    width: 30.333%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32%; /* Adjust width to bring them closer */
     padding: 10px;
+    min-height: 450px;
+    box-sizing: border-box;
     transition: background-color 0.7s ease;
 }
 
+/* Student image */
 .top-students .student img {
     border-radius: 5px 20px;
     width: 100%;
     height: 350px;
 }
 
+/* Hover effect */
 .top-students .student:hover {
     background-color: #753F8C;
     color: #FFFFFF;
 }
 
-/* About Section */
-.about {
-    background-color: #40363B;
-    padding-top: 40px;
-    text-align: center;
-    color: #FFFFFF;
+/* ==========================
+   Fix for Mobile Readability (Top Students Section)
+========================== */
+@media only screen and (max-width: 768px) {
+    .top-students .student {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
-.about h1 {
-    font-size: 36px;
-    color: #5D8C6D;
-}
-
-.about p {
-    font-size: 18px;
-    padding-bottom: 60px;
-    color: #F2F2F2;
-}
-
-/* Enrollment Form Section */
-.enroll {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #F2F2F2;
-    color: #40363B;
-}
-
-.enroll form {
-    max-width: 600px;
-    margin: auto;
-}
-
-.enroll input,
-.enroll select,
-.enroll button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.enroll button {
-    background-color: #753F8C;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-.enroll button:hover {
-    background-color: #5D8C6D;
-}
-
-/* Footer Section */
+/* ==========================
+   Footer Section Styling
+========================== */
+/* Footer layout and background */
 .footer-content {
     text-align: center;
     background-color: #40363B;
@@ -253,20 +358,7 @@ nav ul li {
     color: #F2F2F2;
 }
 
+/* Footer link styling */
 .footer-content a {
     color: #5D8C6D;
-}
-
-/* Responsive Media Queries */
-@media screen and (max-width: 768px) {
-    .logo-container h1,
-    .header h1 {
-        font-size: 2.5rem;
-    }
-
-    .section .W,
-    .top-students .student {
-        width: 100%;
-        margin-bottom: 20px;
-    }
 };
